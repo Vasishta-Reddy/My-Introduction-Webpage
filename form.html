@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVRIT HYDERABAD - College Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid black;
+            font-family: inherit;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .radio-group,
+        .checkbox-group {
+            margin-top: 8px;
+        }
+        
+        .radio-item,
+        .checkbox-item {
+            margin: 5px 0;
+        }
+        
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+            background: white;
+        }
+        
+        .required {
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BVRIT HYDERABAD</h1>
+        <p style="text-align: center; font-weight: bold;">College of Engineering for Women</p>
+        <h2 style="text-align: center;">Registration Form</h2>
+        <p class="subtitle">Complete your registration to join our institution</p>
+        
+        <form action="#" method="POST">
+            <!-- SECTION 1: Personal Information -->
+            <h3 style="margin-top: 20px; margin-bottom: 15px; border-bottom: 1px solid black; padding-bottom: 8px;">1. Personal Information</h3>
+            
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullname">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+            
+            <!-- Email & Phone (Two Columns) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (123) 456-7890" required>
+                </div>
+            </div>
+            
+            <!-- Date of Birth & Age (Two Columns) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Date of Birth <span class="required">*</span></label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age <span class="required">*</span></label>
+                    <input type="number" id="age" name="age" placeholder="Age" min="15" max="50" required>
+                </div>
+            </div>
+            
+            <!-- Gender (Radio Buttons) -->
+            <div class="form-group">
+                <label>Gender <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Academic Details -->
+            <h3 style="margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid black; padding-bottom: 8px;">2. Academic Details</h3>
+            
+            <!-- Course Selection (Select Dropdown) -->
+            <div class="form-group">
+                <label for="course">Select Your Course <span class="required">*</span></label>
+                <select id="course" name="course" required>
+                    <option value="">-- Choose a Course --</option>
+                    <option value="btech">B.Tech (Bachelor of Technology)</option>
+                    <option value="bca">BCA (Computer Applications)</option>
+                    <option value="bba">BBA (Business Administration)</option>
+                    <option value="bsc">BSc (Science)</option>
+                    <option value="ba">BA (Arts)</option>
+                    <option value="bcom">B.Com (Commerce)</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <!-- Specialization (Select Dropdown) -->
+            <div class="form-group">
+                <label for="specialization">Specialization <span class="required">*</span></label>
+                <select id="specialization" name="specialization" required>
+                    <option value="">-- Choose Specialization --</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="it">Information Technology</option>
+                    <option value="ec">Electronics & Communication</option>
+                    <option value="me">Mechanical Engineering</option>
+                    <option value="ce">Civil Engineering</option>
+                    <option value="finance">Finance</option>
+                    <option value="marketing">Marketing</option>
+                </select>
+            </div>
+
+            <!-- SECTION 3: Extracurricular Activities -->
+            <h3 style="margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid black; padding-bottom: 8px;">3. Extracurricular Activities</h3>
+            
+            <!-- Extracurricular Activities (Checkboxes) -->
+            <div class="form-group">
+                <label>Select all that apply:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sports" name="activities" value="sports">
+                        <label for="sports">Sports</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="arts" name="activities" value="arts">
+                        <label for="arts">Arts</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="music" name="activities" value="music">
+                        <label for="music">Music</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="debate" name="activities" value="debate">
+                        <label for="debate">Debate</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="coding" name="activities" value="coding">
+                        <label for="coding">Coding Club</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Address & Agreement -->
+            <h3 style="margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid black; padding-bottom: 8px;">4. Address & Agreement</h3>
+            
+            <!-- Address (Textarea) -->
+            <div class="form-group">
+                <label for="address">Permanent Address <span class="required">*</span></label>
+                <textarea id="address" name="address" placeholder="Enter your complete address" required></textarea>
+            </div>
+            
+            <!-- Terms & Conditions (Checkbox) -->
+            <div class="form-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions <span class="required">*</span></label>
+                </div>
+            </div>
+            
+            <!-- SECTION 5: Submit -->
+            <h3 style="margin-top: 25px; margin-bottom: 15px;">5. Submit Registration</h3>
+            
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="submit" class="btn-submit">Register</button>
+                <button type="reset" class="btn-reset">Clear Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
