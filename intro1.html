@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vasishta Sri Teja Reddy - Portfolio</title>
+  
+  <!-- LINK TO EXTERNAL CSS -->
+  <link rel="stylesheet" href="stylinghtml.css">
+  
+  <!-- INTERNAL CSS (Style tag) - Demonstrating all CSS concepts -->
+  <style>
+    /* ===== UNIVERSAL & ELEMENT SELECTORS ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    /* Element Selectors */
+    h1 { color: #fff; text-align: center; margin-bottom: 10px; }
+    h2 { color: #1a5490; border-bottom: 3px solid #1a5490; padding-bottom: 10px; }
+    h3 { color: #2c5aa0; margin-top: 15px; }
+    p { color: #555; margin-bottom: 10px; }
+    ul, ol { margin-left: 20px; }
+    li { margin: 8px 0; }
+    
+    hr {
+      border: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1a5490, #667eea);
+      margin: 25px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #1a5490;
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #e8f0f7;
+      transition: 0.3s ease;
+    }
+
+    /* ===== CLASS SELECTORS ===== */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-section {
+      text-align: center;
+      background: linear-gradient(135deg, #1a5490, #2c5aa0);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .header-section h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .header-section p {
+      color: #e0f0ff;
+      font-size: 16px;
+    }
+
+    .section-title {
+      background-color: #e8f0f7;
+      color: #0d3b66;
+      padding: 15px;
+      border-left: 5px solid #1a5490;
+      border-radius: 5px;
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .section-content {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+    }
+
+    .list-item {
+      color: #2c5aa0;
+      font-weight: 500;
+      margin: 10px 0;
+      padding: 8px 15px;
+      background-color: #fff;
+      border-left: 4px solid #667eea;
+      border-radius: 4px;
+    }
+
+    .list-item:hover {
+      background-color: #e8f0f7;
+      transform: translateX(5px);
+      transition: 0.3s ease;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #1a5490;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+    }
+
+    button {
+      background-color: #1a5490;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0d3b66;
+      transform: scale(1.05);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button-group button {
+      flex: 1;
+    }
+
+    /* ===== ID SELECTORS ===== */
+    #profile-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    #profile-name {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #profile-title {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    #about-section {
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 6px solid #667eea;
+    }
+
+    #hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    #skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .skill-badge {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact-info {
+      background: linear-gradient(135deg, #fff5e1 0%, #ffe4b5 100%);
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px dashed #ff8c00;
+      margin-top: 20px;
+    }
+
+    #contact-info p {
+      color: #ff6b35;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #favorites-section {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    /* ===== ATTRIBUTE SELECTORS ===== */
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    textarea::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    /* ===== PSEUDO-CLASSES ===== */
+    a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+
+    a:visited {
+      color: #9370db;
+    }
+
+    li:first-child {
+      font-weight: bold;
+      color: #1a5490;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      #hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      #profile-header {
+        padding: 25px;
+      }
+
+      #profile-name {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ===== PROFILE HEADER SECTION ===== -->
+    <div id="profile-header">
+      <div id="profile-name">Vasishta Sri Teja Reddy</div>
+      <div id="profile-title">B.Tech 1st Year • BVRW Hyderabad</div>
+    </div>
+
+    <!-- ===== ABOUT ME SECTION ===== -->
+    <div class="section-title">📋 About Me</div>
+    <div id="about-section">
+      <p>My name is Vasishta Sri Teja Reddy and I am pursuing B.Tech 1st year at BVRW Hyderabad. I enjoy learning technology, programming, and design. I am passionate about creating innovative solutions and exploring new technologies.</p>
+    </div>
+
+    <hr>
+
+    <!-- ===== HOBBIES SECTION ===== -->
+    <div class="section-title">🎯 My Hobbies</div>
+    <div class="section-content">
+      <div id="hobbies-grid">
+        <div class="list-item">🎾 Tennikoit</div>
+        <div class="list-item">♟️ Chess</div>
+        <div class="list-item">🎨 Canva</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- ===== FAVORITE THINGS SECTION ===== -->
+    <div class="section-title">❤️ My Favourite Things</div>
+    <div class="section-content">
+      <p>Some of my favourite things include <strong>travelling</strong>, eating <em>mom-made food</em>, and visiting beautiful places like <u>Manali</u>.</p>
+      
+      <h3>🏔️ Favourite Travel Places</h3>
+      <ol>
+        <li>Manali - snow-capped mountains, fresh air, and peaceful valleys.</li>
+        <li>Goa - sandy beaches, bright sunsets, and fun memories.</li>
+        <li>Ooty - tea gardens, cool weather, and quiet walks.</li>
+      </ol>
+
+      <h3>🍽️ Favourite Foods</h3>
+      <ul>
+        <li>Mom-made aloo paratha with chutney</li>
+        <li>Home-cooked biryani and dal</li>
+        <li>Warm kheer after a family dinner</li>
+      </ul>
+
+      <h3>✨ Things That Make Life Special</h3>
+      <ul>
+        <li>Travelling with family</li>
+        <li>Exploring new places</li>
+        <li>Enjoying delicious, homemade meals</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <!-- ===== TECHNICAL SKILLS SECTION ===== -->
+    <div class="section-title">💻 Technical Skills</div>
+    <div class="section-content">
+      <div id="skills-container">
+        <span class="skill-badge">C Programming</span>
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Excel</span>
+        <span class="skill-badge">Canva Design</span>
+        <span class="skill-badge">HTML</span>
+        <span class="skill-badge">CSS</span>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- ===== STUDENT MARKS SECTION ===== -->
+    <div class="section-title">📊 Academic Performance</div>
+    <div class="section-content">
+      <table>
+        <caption style="font-size: 1.4em; margin-bottom: 10px; color: #1a5490; font-weight: bold;">Class 10 - Term 1 Results</caption>
+        <thead>
+          <tr>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Maths</th>
+            <th>Science</th>
+            <th>English</th>
+            <th>Total</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Rohit</td>
+            <td>88</td>
+            <td>92</td>
+            <td>85</td>
+            <td>265</td>
+            <td>Excellent</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Anjali</td>
+            <td>78</td>
+            <td>81</td>
+            <td>90</td>
+            <td>249</td>
+            <td>Very Good</td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td>Priya</td>
+            <td>84</td>
+            <td>79</td>
+            <td>88</td>
+            <td>251</td>
+            <td>Very Good</td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td>Vikram</td>
+            <td>91</td>
+            <td>85</td>
+            <td>83</td>
+            <td>259</td>
+            <td>Excellent</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td>Meera</td>
+            <td>72</td>
+            <td>76</td>
+            <td>80</td>
+            <td>228</td>
+            <td>Good</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <!-- ===== REGISTRATION FORM SECTION ===== -->
+    <div class="section-title">📝 Registration Form</div>
+    <div class="section-content">
+      <form>
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="two-column">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Gender</label>
+          <div style="margin-top: 8px;">
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male" style="display: inline; margin-right: 20px;">Male</label>
+            
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female" style="display: inline; margin-right: 20px;">Female</label>
+            
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other" style="display: inline;">Other</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="college">College</label>
+          <select id="college" name="college" required>
+            <option value="">Select your college</option>
+            <option value="BVRW">BVRW Hyderabad</option>
+            <option value="IIIT">IIIT Hyderabad</option>
+            <option value="NIT">NIT Warangal</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Skills (Check all that apply)</label>
+          <div style="margin-top: 8px;">
+            <input type="checkbox" id="c" name="skills" value="C">
+            <label for="c" style="display: inline; margin-right: 20px;">C</label>
+            
+            <input type="checkbox" id="python" name="skills" value="Python">
+            <label for="python" style="display: inline; margin-right: 20px;">Python</label>
+            
+            <input type="checkbox" id="web" name="skills" value="Web Dev">
+            <label for="web" style="display: inline;">Web Development</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message / Comments</label>
+          <textarea id="message" name="message" placeholder="Enter your message here..." rows="5"></textarea>
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <hr>
+
+    <!-- ===== CONTACT SECTION with INLINE CSS ===== -->
+    <div id="contact-info">
+      <div class="section-title" style="background-color: transparent; color: #ff6b35; border-left: 5px solid #ff8c00;">📧 Contact Information</div>
+      <p>Email: rvasishtasriteja@gmail.com</p>
+      <p>College: BVRW Hyderabad</p>
+      <p style="color: #666; margin-top: 15px; font-style: italic;">Feel free to reach out for collaborations or inquiries!</p>
+    </div>
+  </div>
+
+</body>
+</html>
